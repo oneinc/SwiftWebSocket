@@ -1650,6 +1650,11 @@ open class WebSocket: NSObject {
     fileprivate var ws: InnerWebSocket
     fileprivate var id = manager.nextId()
     fileprivate var opened: Bool
+    
+    public var isOpened: Bool {
+        return opened
+    }
+    
     open override var hashValue: Int { return id }
     /// Create a WebSocket connection to a URL; this should be the URL to which the WebSocket server will respond.
     public convenience init(_ url: String){
